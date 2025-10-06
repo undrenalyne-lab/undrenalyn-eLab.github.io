@@ -1,192 +1,279 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Undrenalyn eLab conçoit des solutions numériques sur mesure pour automatiser vos processus, révéler vos données et accélérer votre croissance.">
-  <link rel="canonical" href="https://undrenalynelab.io/">
-  <title>Undrenalyn eLab — Automatisez votre activité</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undrenalyn eLab — Automatisez, accélérez, scalez</title>
+  <meta name="description" content="Undrenalyn eLab conçoit des solutions numériques sur mesure pour automatiser vos processus, révéler vos données et accélérer votre croissance." />
+  <link rel="canonical" href="https://undrenalynelab.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            color-scheme: light dark;
-            --bg-color: #0b0d17;
-            --text-color: #f8fafc;
-            --accent: #38bdf8;
-            --muted: rgba(248, 250, 252, 0.75);
-            --card-bg: rgba(15, 23, 42, 0.65);
-            --card-border: rgba(148, 163, 184, 0.2);
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme: light dark;
+      --bg: #0b0f1a;
+      --bg-soft: #0f172a;
+      --text: #e6edf3;
+      --muted: #a9b4c1;
+      --border: rgba(148,163,184,.18);
+      --brand: #38bdf8;
+      --brand-2: #0ea5e9;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --card: rgba(15,23,42,.6);
+      --shadow: 0 10px 30px rgba(2,6,23,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:
+        radial-gradient(60rem 40rem at 110% -10%, rgba(56,189,248,.20), transparent 50%),
+        radial-gradient(40rem 30rem at -20% 120%, rgba(14,165,233,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--brand)}
+    header.nav{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(10px);
+      background:linear-gradient(180deg, rgba(2,6,23,.85), rgba(2,6,23,.55));
+      border-bottom:1px solid var(--border);
+    }
+    .container{width:min(1100px, 92%); margin:0 auto}
+    .nav-row{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700}
+    .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 6px 18px rgba(56,189,248,.4)}
+    .nav-cta{display:flex; gap:10px}
+    .btn{appearance:none; border:1px solid var(--border); background:rgba(15,23,42,.5); color:var(--text); padding:10px 16px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px}
+    .btn.primary{border:none; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#06223a; box-shadow:0 12px 32px rgba(56,189,248,.35)}
+    .btn:hover{transform:translateY(-1px)}
 
-        * {
-            box-sizing: border-box;
-        }
+    /* Hero */
+    .hero{padding:64px 0 24px}
+    .hero-grid{display:grid; gap:22px; grid-template-columns:1.2fr .8fr; align-items:center}
+    h1.title{font-size:clamp(2.2rem, 4.6vw, 3.6rem); line-height:1.05; letter-spacing:-.02em; margin:0}
+    .subtitle{color:var(--muted); font-size:clamp(1.05rem, 2.2vw, 1.25rem); margin:10px 0 20px}
+    .hero-counters{display:flex; gap:18px; flex-wrap:wrap; margin-top:14px}
+    .kpi{padding:14px 16px; border:1px solid var(--border); border-radius:12px; background:var(--card)}
+    .kpi strong{font-size:1.25rem}
+    .hero-card{border:1px solid var(--border); background:var(--card); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .hero-card h3{margin:0 0 6px; font-size:1rem; color:var(--muted)}
+    .hero-card .gauge{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px}
+    .chip{display:inline-flex; gap:6px; align-items:center; border:1px dashed var(--border); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:.92rem}
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.25), transparent 45%),
-                        radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.2), transparent 50%),
-                        var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 32px 16px;
-        }
+    /* Cards sections */
+    section{padding:38px 0}
+    .grid-3{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+    .card{border:1px solid var(--border); background:var(--card); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .card p{margin:0; color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px}
 
-        main {
-            width: min(960px, 100%);
-            display: grid;
-            gap: 32px;
-        }
+    /* Process */
+    .process{display:grid; gap:14px; grid-template-columns:repeat(4,1fr)}
+    .step{position:relative}
+    .step .num{font-family:"IBM Plex Mono"; font-weight:600; color:var(--brand)}
 
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            text-align: center;
-        }
+    /* Use cases */
+    .usecases{display:grid; gap:14px; grid-template-columns:repeat(2,1fr)}
 
-        h1 {
-            margin: 0;
-            font-size: clamp(2.75rem, 6vw, 4rem);
-            line-height: 1.05;
-            letter-spacing: -0.04em;
-        }
+    /* Simulateur */
+    .simulator{display:grid; gap:16px; grid-template-columns:1.1fr .9fr; align-items:start}
+    .field{display:grid; gap:6px}
+    .input{appearance:none; width:100%; border:1px solid var(--border); background:rgba(2,6,23,.5); color:var(--text); border-radius:12px; padding:12px 14px}
+    .note{color:var(--muted); font-size:.95rem}
+    .result{display:grid; gap:10px; border:1px solid var(--border); background:var(--card); border-radius:16px; padding:16px}
+    .result .value{font-size:1.8rem; font-weight:700}
 
-        p.lead {
-            margin: 0 auto;
-            max-width: 720px;
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: var(--muted);
-        }
+    /* Contact */
+    form.contact{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    form.contact .full{grid-column:1/-1}
 
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 12px;
-        }
+    /* FAQ */
+    details{border:1px solid var(--border); background:rgba(2,6,23,.5); border-radius:12px; padding:12px 14px}
+    summary{cursor:pointer; font-weight:600}
 
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border-radius: 999px;
-            padding: 14px 28px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
+    footer.site{border-top:1px solid var(--border); color:var(--muted); padding:28px 0; text-align:center}
 
-        .cta.primary {
-            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-            color: #0f172a;
-            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
-        }
-
-        .cta.primary:hover,
-        .cta.primary:focus-visible {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 40px rgba(56, 189, 248, 0.4);
-        }
-
-        .cta.secondary {
-            border: 1px solid var(--card-border);
-            color: var(--text-color);
-            background: rgba(15, 23, 42, 0.35);
-        }
-
-        .cta.secondary:hover,
-        .cta.secondary:focus-visible {
-            transform: translateY(-2px);
-            background: rgba(15, 23, 42, 0.55);
-        }
-
-        section.highlights {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-
-        .card {
-            padding: 24px;
-            border-radius: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(18px);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.95rem;
-            color: rgba(148, 163, 184, 0.85);
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 24px 12px;
-            }
-
-            .cta {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    @media (max-width: 980px){
+      .hero-grid,.grid-3,.process,.usecases,.simulator{grid-template-columns:1fr}
+      .nav-row{padding:12px 0}
+    }
+  </style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Automatisez votre activité.<br>Concentrez-vous sur l'essentiel.</h1>
-            <p class="lead">Undrenalyn eLab conçoit des solutions numériques élégantes et performantes pour accélérer vos processus, révéler vos données et propulser votre organisation vers l'efficacité.</p>
-            <div class="cta-group">
-                <a class="cta primary" href="mailto:contact@undrenalynelab.io">Planifier un échange</a>
-                <a class="cta secondary" href="#services">Découvrir nos expertises</a>
+  <header class="nav">
+    <div class="container nav-row">
+      <a class="brand" href="#top"><span class="logo" aria-hidden="true"></span>Undrenalyn eLab</a>
+      <nav class="nav-cta">
+        <a class="btn" href="#services">Expertises</a>
+        <a class="btn" href="#simulateur">Simulateur</a>
+        <a class="btn primary" href="#contact">Discuter de votre projet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="chip">Studio produit • Automatisation • Data</span>
+          <h1 class="title">Automatisez ce qui vous freine. Accélérez ce qui vous fait grandir.</h1>
+          <p class="subtitle">Nous concevons des produits sur mesure: automatisations, applications web, et tableaux de bord qui transforment vos opérations et libèrent du temps à forte valeur.</p>
+          <div class="nav-cta">
+            <a class="btn primary" href="#contact">Planifier un échange</a>
+            <a class="btn" href="#usecases">Voir des cas d’usage</a>
+          </div>
+          <div class="hero-counters">
+            <div class="kpi"><strong>3x</strong><br><span class="muted">Productivité moyenne</span></div>
+            <div class="kpi"><strong>-40%</strong><br><span class="muted">Coûts opérationnels</span></div>
+            <div class="kpi"><strong>+99.9%</strong><br><span class="muted">Fiabilité des processus</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Diagnostic express</h3>
+          <p class="note">Identifiez en 5 minutes les leviers d’automatisation prioritaires.</p>
+          <div class="gauge">
+            <div class="card">
+              <h3>Temps à gagner</h3>
+              <p><strong>10–25 h/sem.</strong> selon la taille d’équipe</p>
             </div>
-        </header>
+            <div class="card">
+              <h3>ROI estimé</h3>
+              <p><strong>2–6 mois</strong> pour amortir l’investissement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="services" class="highlights" aria-label="Expertises d'Undrenalyn eLab">
-            <article class="card">
-                <h2>Automatisation intelligente</h2>
-                <p>Optimisez vos workflows avec des automatisations sur mesure qui libèrent vos équipes des tâches répétitives et réduisent les risques d'erreur.</p>
-            </article>
-            <article class="card">
-                <h2>Applications sur mesure</h2>
-                <p>Déployez des applications web et mobiles modernes, conçues pour votre métier et évolutives avec vos besoins.</p>
-            </article>
-            <article class="card">
-                <h2>Data & insights</h2>
-                <p>Transformez vos données en décisions actionnables grâce à des tableaux de bord clairs, des analyses avancées et une gouvernance maîtrisée.</p>
-            </article>
-        </section>
+    <!-- Bénéfices clés -->
+    <section>
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Automatisation fiable</h3>
+          <p>Des workflows robustes qui s’exécutent sans erreur, 24/7, avec traçabilité.</p>
+          <ul class="list">
+            <li>Orchestration d’étapes multi-outils</li>
+            <li>Gestion des exceptions et alertes</li>
+            <li>Logs et monitoring en temps réel</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Applications sur mesure</h3>
+          <p>Des interfaces élégantes centrées utilisateur, taillées pour vos processus métier.</p>
+          <ul class="list">
+            <li>Portails internes et front-office</li>
+            <li>Formulaires dynamiques, validation, rôles</li>
+            <li>APIs et intégrations SSO</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Données actionnables</h3>
+          <p>Des tableaux de bord clairs et une gouvernance de données pragmatique.</p>
+          <ul class="list">
+            <li>Modélisation et qualité de données</li>
+            <li>KPIs, alertes, storytelling</li>
+            <li>Connecteurs vers vos sources</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <footer>
-            © <span id="year"></span> Undrenalyn eLab · undrenalynelab.io
-        </footer>
-    </main>
+    <!-- Expertises / Métiers -->
+    <section id="services">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Product & No-Code Engineering</h3>
+          <p>Conception, prototypage et mise en production rapide via stacks modernes et no-code/low-code.</p>
+        </div>
+        <div class="card">
+          <h3>Automation & Integration</h3>
+          <p>Reliage d’outils (CRM, ERP, emailing, data) et automatisations résilientes.</p>
+        </div>
+        <div class="card">
+          <h3>Data & Analytics</h3>
+          <p>Architecture de données, dashboards décisionnels, data quality et gouvernance légère.</p>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
+    <!-- Cas d’usage -->
+    <section id="usecases">
+      <div class="container usecases">
+        <div class="card">
+          <h3>Onboarding client automatisé</h3>
+          <p>Récolte de pièces, validations et création de comptes synchronisés (CRM/ERP/Support).</p>
+        </div>
+        <div class="card">
+          <h3>Traitement des leads</h3>
+          <p>Qualification, scoring et routage automatique vers les bons commerciaux.</p>
+        </div>
+        <div class="card">
+          <h3>Back-office financier</h3>
+          <p>Pré-facturation, rapprochements, notifications et export comptable.</p>
+        </div>
+        <div class="card">
+          <h3>Support & SLA</h3>
+          <p>Priorisation, réponses assistées, escalades et indicateurs de respect des SLA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulateur ROI -->
+    <section id="simulateur">
+      <div class="container simulator">
+        <div class="card">
+          <h3>Simulateur de gains</h3>
+          <p class="note">Estimez rapidement l’impact d’une automatisation sur votre équipe.</p>
+          <div class="field">
+            <label for="nb">Nombre de collaborateurs concernés</label>
+            <input class="input" id="nb" type="number" min="1" value="5">
+          </div>
+          <div class="field">
+            <label for="h">Heures perdues/sem. par personne</label>
+            <input class="input" id="h" type="number" min="1" value="4">
+          </div>
+          <div class="field">
+            <label for="tjm">Coût horaire moyen (€)</label>
+            <input class="input" id="tjm" type="number" min="1" value="45">
+          </div>
+          <div class="field">
+            <label for="eff">Efficacité gagnée (%)</label>
+            <input class="input" id="eff" type="number" min="5" max="90" value="50">
+          </div>
+          <button class="btn primary" type="button" onclick="calculer()">Calculer</button>
+        </div>
+        <div class="result">
+          <div>
+            <div class="note">Temps économisé / semaine</div>
+            <div class="value" id="r_hours">— h</div>
+          </div>
+          <div>
+            <div class="note">Économie mensuelle estimée</div>
+            <div class="value" id="r_saving">— €</div>
+          </div>
+          <div>
+            <div class="note">Payback estimé</div>
+            <div class="value" id="r_payback">— mois</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section>
+      <div class="container process">
+        <div class="card step">
+          <div class="num">01</div>
+          <h3>Cadre & priorisation</h3>
+          <p>Cartographie des processus, priorisation par impact, périmètre clair.</p>
+        </div>
+        <div
