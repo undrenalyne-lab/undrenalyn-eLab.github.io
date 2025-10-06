@@ -1,32 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undrenalyne eLab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Undrenalyn eLab conçoit des solutions numériques sur mesure pour automatiser vos processus, révéler vos données et accélérer votre croissance.">
+  <link rel="canonical" href="https://undrenalynelab.io/">
+  <title>Undrenalyn eLab — Automatisez votre activité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            color-scheme: light dark;
+            --bg-color: #0b0d17;
+            --text-color: #f8fafc;
+            --accent: #38bdf8;
+            --muted: rgba(248, 250, 252, 0.75);
+            --card-bg: rgba(15, 23, 42, 0.65);
+            --card-border: rgba(148, 163, 184, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.25), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.2), transparent 50%),
+                        var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
         }
+
+        main {
+            width: min(960px, 100%);
+            display: grid;
+            gap: 32px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
         h1 {
-            color: #333;
+            margin: 0;
+            font-size: clamp(2.75rem, 6vw, 4rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
         }
-        .container {
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
+
+        p.lead {
+            margin: 0 auto;
+            max-width: 720px;
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: var(--muted);
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 999px;
+            padding: 14px 28px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .cta.primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #0f172a;
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
+        }
+
+        .cta.primary:hover,
+        .cta.primary:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(56, 189, 248, 0.4);
+        }
+
+        .cta.secondary {
+            border: 1px solid var(--card-border);
+            color: var(--text-color);
+            background: rgba(15, 23, 42, 0.35);
+        }
+
+        .cta.secondary:hover,
+        .cta.secondary:focus-visible {
+            transform: translateY(-2px);
+            background: rgba(15, 23, 42, 0.55);
+        }
+
+        section.highlights {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .card {
+            padding: 24px;
+            border-radius: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(18px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.95rem;
+            color: rgba(148, 163, 184, 0.85);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .cta {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur Undrenalyne eLab</h1>
-        <p>Site web en cours de développement.</p>
-        <p>Cette page sera bientôt mise à jour avec le contenu du laboratoire.</p>
-    </div>
+    <main>
+        <header>
+            <h1>Automatisez votre activité.<br>Concentrez-vous sur l'essentiel.</h1>
+            <p class="lead">Undrenalyn eLab conçoit des solutions numériques élégantes et performantes pour accélérer vos processus, révéler vos données et propulser votre organisation vers l'efficacité.</p>
+            <div class="cta-group">
+                <a class="cta primary" href="mailto:contact@undrenalynelab.io">Planifier un échange</a>
+                <a class="cta secondary" href="#services">Découvrir nos expertises</a>
+            </div>
+        </header>
+
+        <section id="services" class="highlights" aria-label="Expertises d'Undrenalyn eLab">
+            <article class="card">
+                <h2>Automatisation intelligente</h2>
+                <p>Optimisez vos workflows avec des automatisations sur mesure qui libèrent vos équipes des tâches répétitives et réduisent les risques d'erreur.</p>
+            </article>
+            <article class="card">
+                <h2>Applications sur mesure</h2>
+                <p>Déployez des applications web et mobiles modernes, conçues pour votre métier et évolutives avec vos besoins.</p>
+            </article>
+            <article class="card">
+                <h2>Data & insights</h2>
+                <p>Transformez vos données en décisions actionnables grâce à des tableaux de bord clairs, des analyses avancées et une gouvernance maîtrisée.</p>
+            </article>
+        </section>
+
+        <footer>
+            © <span id="year"></span> Undrenalyn eLab · undrenalynelab.io
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
