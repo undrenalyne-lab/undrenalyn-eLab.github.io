@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre message — Undrenalyn eLab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#05070f',
+                        aurora: '#38bdf8',
+                        opal: '#818cf8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        aurora: '0 24px 70px -30px rgba(56, 189, 248, 0.55)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(129, 140, 248, 0.35), transparent 55%),
+                radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.3), transparent 50%),
+                linear-gradient(180deg, #040611 0%, #0b1120 60%, #05070f 100%);
+        }
+    </style>
+</head>
+<body class="flex h-full min-h-screen items-center justify-center bg-transparent font-sans text-slate-100 antialiased">
+    <main class="mx-6 w-full max-w-xl rounded-[32px] border border-white/10 bg-white/10 p-10 text-center backdrop-blur-xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.35em] text-aurora">Merci</div>
+        <h1 class="mt-6 text-3xl font-semibold text-white">Votre message a bien été reçu.</h1>
+        <p class="mt-4 text-sm text-slate-200">
+            Nous revenons vers vous sous 24&nbsp;heures avec les prochaines étapes et, si besoin, une invitation pour notre session spéciale Agent Builder de OpenAI. Une urgence&nbsp;? Écrivez-nous sur
+            <a href="mailto:contact@undrenalyn-elab.com" class="text-aurora underline decoration-aurora/50 underline-offset-4">contact@undrenalyn-elab.com</a>.
+        </p>
+        <a href="/" class="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-aurora via-cyan-400 to-opal px-6 py-3 text-sm font-semibold text-midnight shadow-aurora transition hover:-translate-y-0.5">Retourner à l'accueil</a>
+    </main>
+</body>
+</html>
