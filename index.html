@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Undrenalyn eLab accompagne les organisations à automatiser leurs processus, révéler la valeur de leurs données et accélérer leurs produits digitaux.">
+    <meta name="description" content="Undrenalyn eLab combine l'ADN Base44 et une approche produit moderne pour automatiser les opérations, accélérer vos cycles digitaux et gouverner la donnée.">
     <link rel="canonical" href="https://undrenalynelab.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Undrenalyn eLab">
-    <meta property="og:title" content="Undrenalyn eLab — Atelier digital pour automatiser et scaler vos opérations">
-    <meta property="og:description" content="Conception produit, automatisation no/low-code, data & AI : Undrenalyn eLab transforme vos idées en expériences numériques performantes.">
+    <meta property="og:title" content="Undrenalyn eLab — Automatisation, produit & data pour vos équipes">
+    <meta property="og:description" content="Inspiré de Base44, le studio Undrenalyn eLab orchestre stratégie produit, automatisation no/low-code et data pour générer +20h/semaines d'impact.">
     <meta property="og:url" content="https://undrenalynelab.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Undrenalyn eLab — Accélérez vos produits digitaux</title>
+    <title>Undrenalyn eLab — Automatisez, industrialisez, pilotez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
@@ -22,10 +22,10 @@
             theme: {
                 extend: {
                     colors: {
-                        night: '#0B1021',
-                        ocean: '#0EA5E9',
-                        mint: '#38BDF8',
-                        slate: '#1E293B',
+                        night: '#050816',
+                        abyss: '#0C1328',
+                        cobalt: '#2563EB',
+                        neon: '#38BDF8',
                         mist: '#94A3B8'
                     },
                     fontFamily: {
@@ -33,7 +33,7 @@
                         display: ['Space Grotesk', 'Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        glow: '0 40px 120px -40px rgba(14, 165, 233, 0.55)'
+                        glow: '0 40px 120px -40px rgba(56, 189, 248, 0.55)'
                     }
                 }
             }
@@ -41,92 +41,138 @@
     </script>
     <style>
         body {
-            background: radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.2), transparent 45%),
-                        radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.25), transparent 50%),
-                        #05060f;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.35), transparent 50%),
+                radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.25), transparent 45%),
+                linear-gradient(180deg, #050816 0%, #03040d 60%, #050816 100%);
         }
     </style>
 </head>
-<body class="bg-transparent text-slate-100 antialiased">
-    <header class="relative">
-        <div class="absolute inset-0 -z-10 h-[560px] bg-gradient-to-b from-white/5 via-night/80 to-night"></div>
+<body class="bg-transparent font-sans text-slate-100 antialiased">
+    <header class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 h-[620px] bg-gradient-to-b from-white/10 via-abyss/80 to-night"></div>
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 lg:px-10">
-            <a href="#" class="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
-                <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-mint">UE</span>
+            <a href="#" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-white">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-neon">UE</span>
                 <span class="font-display text-xl uppercase">Undrenalyn eLab</span>
             </a>
             <div class="hidden items-center gap-10 text-sm font-medium text-slate-200 md:flex">
+                <a class="transition hover:text-white" href="#metiers">Métiers</a>
                 <a class="transition hover:text-white" href="#expertises">Expertises</a>
-                <a class="transition hover:text-white" href="#approche">Approche</a>
-                <a class="transition hover:text-white" href="#realisations">Réalisations</a>
+                <a class="transition hover:text-white" href="#technologies">Technologies</a>
+                <a class="transition hover:text-white" href="#simulateur">Simulateur</a>
                 <a class="transition hover:text-white" href="#contact">Contact</a>
-                <a class="rounded-full bg-white/10 px-5 py-2 text-white transition hover:bg-white/20" href="mailto:contact@undrenalyn-elab.com">Parler à un expert</a>
+                <a class="rounded-full bg-white/10 px-5 py-2 text-white transition hover:bg-white/20" href="#contact">Accéder au diagnostic</a>
             </div>
         </nav>
-        <div class="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-16 text-center lg:grid-cols-[1.2fr,1fr] lg:items-center lg:px-10 lg:text-left">
-            <div class="space-y-6">
-                <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-mint">Automatisation · Produit · Data</span>
+        <div class="mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 text-center lg:grid-cols-[1.25fr,1fr] lg:items-center lg:px-10 lg:text-left">
+            <div class="space-y-8">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-neon">Automatisez · Industrialisez · Pilotez</span>
                 <h1 class="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-                    Automatisez votre activité, accélérez l'impact de vos produits digitaux.
+                    L'héritage Base44, réinventé pour générer <span class="text-neon">+20h/semaines</span> d'efficacité par équipe.
                 </h1>
                 <p class="text-lg text-slate-200 sm:text-xl">
-                    Inspiré par l'expérience Base44 et renforcé par l'agilité Undrenalyn eLab, nous concevons des plateformes digitales sobres, intelligentes et orientées ROI pour faire passer vos opérations à l'échelle.
+                    Nous combinons stratégie produit, automatisation no/low-code et gouvernance data pour libérer vos équipes métiers. Résultat : des produits digitaux livrés 2x plus vite, des opérations fluides et une visibilité temps réel sur vos KPI.
                 </p>
                 <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-                    <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-mint px-6 py-3 font-semibold text-night shadow-glow transition hover:-translate-y-0.5 hover:bg-white hover:text-night">Planifier un diagnostic</a>
-                    <a href="#expertises" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-white">Explorer nos expertises</a>
+                    <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-neon px-6 py-3 font-semibold text-night shadow-glow transition hover:-translate-y-0.5 hover:bg-white">Planifier un échange</a>
+                    <a href="#simulateur" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:border-white">
+                        Estimer mon gain
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+                    </a>
                 </div>
                 <dl class="grid gap-6 text-left sm:grid-cols-3">
                     <div>
-                        <dt class="text-sm text-mist">Projets livrés</dt>
-                        <dd class="text-2xl font-semibold text-white">60+</dd>
+                        <dt class="text-sm text-mist">Temps économisé</dt>
+                        <dd class="text-2xl font-semibold text-white">20h / semaine</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-mist">Gain de temps moyen</dt>
-                        <dd class="text-2xl font-semibold text-white">-35%</dd>
+                        <dt class="text-sm text-mist">Time-to-market</dt>
+                        <dd class="text-2xl font-semibold text-white">x2 plus rapide</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-mist">Satisfaction clients</dt>
-                        <dd class="text-2xl font-semibold text-white">4.9/5</dd>
+                        <dt class="text-sm text-mist">Adoption</dt>
+                        <dd class="text-2xl font-semibold text-white">93% d'équipes actives</dd>
                     </div>
                 </dl>
             </div>
-            <div class="mx-auto w-full max-w-lg rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-                <h2 class="mb-6 text-xl font-semibold text-white">Accélérez vos cycles d'innovation</h2>
-                <ul class="space-y-5 text-left text-slate-200">
+            <div class="mx-auto w-full max-w-lg rounded-3xl border border-white/10 bg-white/5 p-8 text-left backdrop-blur">
+                <h2 class="mb-6 text-xl font-semibold text-white">Pourquoi les clients Base44 nous ont choisis</h2>
+                <ul class="space-y-5 text-slate-200">
                     <li class="flex items-start gap-3">
-                        <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-mint/20 text-mint">1</span>
-                        <span><strong>Vision produit alignée</strong> — cadrage stratégique et exploration des usages pour prioriser les chantiers à forte valeur.</span>
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-neon/20 text-neon">1</span>
+                        <span><strong>Alignement business & produit</strong> — ateliers North Star, cadrage OKR et priorisation impact.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-mint/20 text-mint">2</span>
-                        <span><strong>Automation no &amp; low-code</strong> — intégrations, RPA et assistants IA pour fluidifier vos processus métiers.</span>
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-neon/20 text-neon">2</span>
+                        <span><strong>Automatisation orchestrée</strong> — intégrations Make/n8n, RPA, IA générative appliquée à vos processus.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-mint/20 text-mint">3</span>
-                        <span><strong>Pilotage data &amp; analytics</strong> — gouvernance, dashboards et intelligence décisionnelle en continu.</span>
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-neon/20 text-neon">3</span>
+                        <span><strong>Gouvernance data continue</strong> — modern data stack, dashboards exécutifs et coaching adoption.</span>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <main class="space-y-32 pb-24">
-        <section aria-label="Clients et partenaires" class="bg-white/5 py-12">
-            <div class="mx-auto flex max-w-6xl flex-col gap-10 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-                <div class="max-w-lg space-y-2 text-left">
-                    <h2 class="text-sm font-semibold uppercase tracking-[0.3em] text-mist">Ils se transforment avec nous</h2>
-                    <p class="text-lg text-white">Des scale-ups aux grandes organisations, nous orchestrons des feuilles de route produits qui combinent automatisation, expérience utilisateur et pilotage data.</p>
+    <main class="space-y-32 pb-28">
+        <section aria-label="Secteurs accompagnés" id="metiers" class="bg-white/5 py-16">
+            <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-start lg:justify-between lg:px-10">
+                <div class="max-w-xl space-y-4">
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Métiers</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Des squads mixtes produit & métier</h2>
+                    <p class="text-lg text-slate-200">Comme chez Base44, nous intégrons vos équipes marketing, opérations, IT ou finance pour sécuriser l'adoption et maximiser le ROI.</p>
                 </div>
-                <div class="grid flex-1 grid-cols-2 gap-6 text-center text-sm text-mist sm:grid-cols-3 lg:grid-cols-4">
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Retail &amp; E-commerce</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Industrie &amp; Supply</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Banque &amp; Assurance</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Éducation &amp; Culture</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Santé &amp; Care</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Services B2B</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Secteur public</span>
-                    <span class="rounded-2xl border border-white/10 bg-white/5 py-4">Mobilité</span>
+                <div class="grid flex-1 gap-6 text-sm text-slate-200 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">Direction Marketing & Growth</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>Onboarding clients automatisé</li>
+                            <li>Scoring & nurturing multicanal</li>
+                            <li>Analyses ROI omnicanal</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">Opérations & Supply</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>RPA logistique & support</li>
+                            <li>Prévision des volumes</li>
+                            <li>Portails fournisseurs digitaux</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">Produit & Expérience</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>Discovery structurée</li>
+                            <li>Design system Inter/Space Grotesk</li>
+                            <li>Tests utilisateurs continus</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">Finance & Direction Générale</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>Reporting automatisé</li>
+                            <li>Prévision CA & marge</li>
+                            <li>Simulations de scénarios</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">RH & Expérience Collaborateur</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>Parcours employés automatisés</li>
+                            <li>Portails self-service</li>
+                            <li>Insights engagement</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-abyss/80 p-6">
+                        <h3 class="text-lg font-semibold text-white">IT & Data</h3>
+                        <ul class="mt-4 space-y-2 text-mist">
+                            <li>Architecture composable</li>
+                            <li>Observabilité & FinOps</li>
+                            <li>Gouvernance & sécurité</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -134,52 +180,113 @@
         <section id="expertises" class="mx-auto max-w-6xl px-6 lg:px-10">
             <div class="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div class="max-w-2xl space-y-4">
-                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Expertises</span>
-                    <h2 class="font-display text-3xl text-white sm:text-4xl">Une offre intégrée de bout en bout</h2>
-                    <p class="text-lg text-slate-200">Reprenant la vision Base44 — orchestrer produit, data et industrialisation — nous avons conçu un triptyque d'expertises pour activer rapidement vos leviers de croissance.</p>
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Expertises</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Un triptyque héritier de Base44</h2>
+                    <p class="text-lg text-slate-200">Nous reprenons le modèle Discover · Build · Scale de Base44 et le poussons avec une stack automatisation & IA pour générer de l'impact mesurable dès les 6 premières semaines.</p>
                 </div>
-                <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-mint transition hover:text-white">
-                    Prendre rendez-vous
+                <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-neon transition hover:text-white">
+                    Réserver un créneau
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
                 </a>
             </div>
             <div class="grid gap-8 lg:grid-cols-3">
-                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-mint/40">
+                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-neon/50">
                     <div class="mb-6 flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-white">Stratégie produit &amp; CX</h3>
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Discover</span>
+                        <h3 class="text-xl font-semibold text-white">Discover</h3>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Vision</span>
                     </div>
-                    <p class="text-slate-200">Vision, cadrage, UX research, prototypage rapide et tests utilisateurs pour co-construire des expériences qui transforment.</p>
+                    <p class="text-slate-200">Diagnostic express, cartographie des flux, étude d'opportunité IA et business case pour cadrer vos paris.</p>
                     <ul class="mt-6 space-y-3 text-sm text-mist">
-                        <li>Ateliers North Star &amp; story mapping</li>
-                        <li>Design system &amp; guidelines</li>
-                        <li>Product management partagé</li>
+                        <li>Design sprints & immersion terrain</li>
+                        <li>Blueprint process & scoring valeur</li>
+                        <li>Feuille de route priorisée</li>
                     </ul>
                 </article>
-                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-mint/40">
+                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-neon/50">
                     <div class="mb-6 flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-white">Automation &amp; plateformes</h3>
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Build</span>
+                        <h3 class="text-xl font-semibold text-white">Build</h3>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Delivery</span>
                     </div>
-                    <p class="text-slate-200">Automatisation de processus, développement web/mobile, intégrations API et IA appliquée pour industrialiser vos services.</p>
+                    <p class="text-slate-200">Industrialisation no/low-code & custom dev : automatisations, portails digitaux, composants UI et intégrations.</p>
                     <ul class="mt-6 space-y-3 text-sm text-mist">
-                        <li>Stack no-code / low-code &amp; custom dev</li>
-                        <li>Orchestration RPA &amp; assistants IA</li>
-                        <li>Industrialisation CI/CD</li>
+                        <li>Stack Make · n8n · Retool · Bubble</li>
+                        <li>Développement React, Next.js, Python</li>
+                        <li>CI/CD & qualité continue</li>
                     </ul>
                 </article>
-                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-mint/40">
+                <article class="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:border-neon/50">
                     <div class="mb-6 flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-white">Data, AI &amp; pilotage</h3>
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Scale</span>
+                        <h3 class="text-xl font-semibold text-white">Scale</h3>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Data</span>
                     </div>
-                    <p class="text-slate-200">Architecture data, gouvernance, BI et IA générative pour ancrer vos décisions sur une information fiable et actionnable.</p>
+                    <p class="text-slate-200">Pilotage data-driven, IA générative métier et transfert de compétences pour ancrer la valeur dans vos équipes.</p>
                     <ul class="mt-6 space-y-3 text-sm text-mist">
-                        <li>Modern data stack &amp; observabilité</li>
-                        <li>Dashboards exécutifs &amp; OKR</li>
-                        <li>IA générative sur-mesure</li>
+                        <li>Modern data stack (Fivetran, dbt, Snowflake)</li>
+                        <li>Dashboards exécutifs & alerting</li>
+                        <li>Coaching adoption & gouvernance</li>
                     </ul>
                 </article>
+            </div>
+        </section>
+
+        <section id="technologies" class="bg-white/5 py-20">
+            <div class="mx-auto max-w-6xl px-6 lg:px-10">
+                <div class="mb-10 max-w-3xl space-y-4">
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Stack technologique</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Les outils que nous orchestrons</h2>
+                    <p class="text-lg text-slate-200">Une stack hybride pensée pour accélérer : nous combinons les briques composables de Base44 avec les dernières solutions low-code, IA et data.</p>
+                </div>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="rounded-3xl border border-white/10 bg-abyss/70 p-6">
+                        <h3 class="text-lg font-semibold text-white">Produit</h3>
+                        <p class="mt-3 text-mist">Figma · Storybook · Framer · Notion</p>
+                    </div>
+                    <div class="rounded-3xl border border-white/10 bg-abyss/70 p-6">
+                        <h3 class="text-lg font-semibold text-white">Automation</h3>
+                        <p class="mt-3 text-mist">Make · n8n · Zapier · Workato · UiPath</p>
+                    </div>
+                    <div class="rounded-3xl border border-white/10 bg-abyss/70 p-6">
+                        <h3 class="text-lg font-semibold text-white">Développement</h3>
+                        <p class="mt-3 text-mist">React · Next.js · Node · Python · FastAPI</p>
+                    </div>
+                    <div class="rounded-3xl border border-white/10 bg-abyss/70 p-6">
+                        <h3 class="text-lg font-semibold text-white">Data & AI</h3>
+                        <p class="mt-3 text-mist">Snowflake · BigQuery · dbt · Metabase · OpenAI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulateur" class="mx-auto max-w-6xl px-6 lg:px-10">
+            <div class="grid gap-12 lg:grid-cols-[1.1fr,0.9fr]">
+                <div class="space-y-6">
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Simulateur</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Projetez votre gain d'efficacité</h2>
+                    <p class="text-lg text-slate-200">Base44 nous a appris que chaque équipe libérée de tâches manuelles gagne en focus stratégique. Déplacez le curseur pour estimer le temps sauvé et la valeur créée.</p>
+                    <ul class="space-y-3 text-sm text-mist">
+                        <li>20 heures économisées par semaine et par équipe grâce aux automatisations.</li>
+                        <li>ROI moyen de 145% sur 12 mois constaté sur les programmes Base44.</li>
+                        <li>Accompagnement adoption pour garantir +93% d'équipes actives.</li>
+                    </ul>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+                    <div class="space-y-6">
+                        <label for="team-size" class="block text-sm font-semibold uppercase tracking-[0.25em] text-neon">Nombre d'équipes à équiper</label>
+                        <input id="team-size" type="range" min="1" max="10" value="3" class="w-full accent-neon">
+                        <div class="grid gap-4 rounded-2xl border border-white/10 bg-abyss/80 p-6 text-center">
+                            <div>
+                                <p class="text-sm text-mist">Temps gagné par semaine</p>
+                                <p id="hours-saved" class="mt-1 text-3xl font-semibold text-white">60 h</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-mist">Valeur annuelle estimée*</p>
+                                <p id="value-created" class="mt-1 text-3xl font-semibold text-white">72 k€</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-mist">*Hypothèse : TJM interne 60€/h · ROI moyen constaté +145%.</p>
+                        <a href="#contact" class="inline-flex w-full items-center justify-center rounded-full bg-neon px-6 py-3 font-semibold text-night transition hover:-translate-y-0.5 hover:bg-white">Activer ma feuille de route</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -187,30 +294,30 @@
             <div class="absolute inset-0 -z-10 bg-gradient-to-b from-night/0 via-night/70 to-night"></div>
             <div class="mx-auto max-w-6xl px-6 py-20 lg:px-10">
                 <div class="mb-12 max-w-2xl space-y-4 text-center lg:text-left">
-                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Approche</span>
-                    <h2 class="font-display text-3xl text-white sm:text-4xl">Un studio produit branché sur vos enjeux métiers</h2>
-                    <p class="text-lg text-slate-200">Notre méthode s'inspire du modèle Base44 : immersion métier, prototypage rapide et itérations courtes pour délivrer de la valeur tangible à chaque étape.</p>
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Approche</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Un studio branché sur vos rituels métiers</h2>
+                    <p class="text-lg text-slate-200">Notre méthode croise les rituels Base44 (immersion, priorisation, itération) avec l'exigence Undrenalyn eLab : gouvernance data et automatisation dès le jour 1.</p>
                 </div>
                 <div class="grid gap-8 lg:grid-cols-4">
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">01</span>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Immersion</h3>
-                        <p class="mt-3 text-sm text-slate-200">Audit terrain, interviews et cartographie des flux pour aligner l'équipe sur les irritants clés.</p>
+                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">01</span>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Immersion 360°</h3>
+                        <p class="mt-3 text-sm text-slate-200">Interviews, audit process, cartographie data et shadowing utilisateurs pour identifier les 3 quick wins prioritaires.</p>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">02</span>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Blueprint</h3>
-                        <p class="mt-3 text-sm text-slate-200">Priorisation des use cases, architecture technique et roadmap incrémentale.</p>
+                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">02</span>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Blueprint & business case</h3>
+                        <p class="mt-3 text-sm text-slate-200">Roadmap trimestrielle, cadrage KPI, modèle économique et design d'expérience aligné sur vos métiers.</p>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">03</span>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Delivery</h3>
-                        <p class="mt-3 text-sm text-slate-200">Design system, automatisations, développement et intégration continue.</p>
+                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">03</span>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Delivery accéléré</h3>
+                        <p class="mt-3 text-sm text-slate-200">Automatisations orchestrées, portails digitaux, intégrations API et IA générative métier en cycles de 2 semaines.</p>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">04</span>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Scale</h3>
-                        <p class="mt-3 text-sm text-slate-200">Monitoring, accompagnement des équipes et amélioration continue post-lancement.</p>
+                        <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">04</span>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Scale & adoption</h3>
+                        <p class="mt-3 text-sm text-slate-200">Formation, documentation, monitoring et amélioration continue pour déployer à l'échelle et pérenniser la valeur.</p>
                     </div>
                 </div>
             </div>
@@ -219,61 +326,61 @@
         <section id="realisations" class="mx-auto max-w-6xl px-6 lg:px-10">
             <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div class="max-w-2xl space-y-4">
-                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Réalisations</span>
-                    <h2 class="font-display text-3xl text-white sm:text-4xl">Des cas d'usage concrets &amp; mesurables</h2>
-                    <p class="text-lg text-slate-200">Nos clients héritent d'outils robustes, durables et faciles à prendre en main. Voici quelques exemples issus de nos projets récents.</p>
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Cas clients</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Des résultats inspirés de Base44, délivrés par Undrenalyn eLab</h2>
+                    <p class="text-lg text-slate-200">Chaque projet est piloté par des indicateurs tangibles : adoption, temps gagné, revenus générés, satisfaction utilisateurs.</p>
                 </div>
-                <a href="mailto:contact@undrenalyn-elab.com" class="inline-flex items-center gap-2 text-sm font-semibold text-mint transition hover:text-white">Discuter de votre projet</a>
+                <a href="mailto:contact@undrenalyn-elab.com" class="inline-flex items-center gap-2 text-sm font-semibold text-neon transition hover:text-white">Discuter de votre projet</a>
             </div>
             <div class="grid gap-8 lg:grid-cols-3">
-                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-mint/40">
+                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-neon/40">
                     <div class="flex items-center justify-between">
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Ops</span>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Ops</span>
                         <span class="text-sm text-mist">Retail</span>
                     </div>
-                    <h3 class="mt-6 text-xl font-semibold text-white">Centre logistique piloté par IA</h3>
-                    <p class="mt-4 text-sm text-slate-200">Synchronisation des stocks, prévision des volumes et automatisation des relances : -42% de rupture et +18% de productivité.</p>
+                    <h3 class="mt-6 text-xl font-semibold text-white">Tour de contrôle logistique</h3>
+                    <p class="mt-4 text-sm text-slate-200">Automatisation des réapprovisionnements, IA prédictive et alerting temps réel : -42% de rupture, +18% de productivité, 25h gagnées/semaine.</p>
                 </article>
-                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-mint/40">
+                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-neon/40">
                     <div class="flex items-center justify-between">
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Produit</span>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Produit</span>
                         <span class="text-sm text-mist">SaaS</span>
                     </div>
-                    <h3 class="mt-6 text-xl font-semibold text-white">Portail client nouvelle génération</h3>
-                    <p class="mt-4 text-sm text-slate-200">Refonte UX, intégration CRM et automatisation de l'onboarding : NPS multiplié par 2 et réduction du churn de 15%.</p>
+                    <h3 class="mt-6 text-xl font-semibold text-white">Portail client augmenté</h3>
+                    <p class="mt-4 text-sm text-slate-200">Refonte UX, automatisation onboarding, intégrations CRM/API : NPS x2, churn -15%, 30h d'échanges support économisés chaque semaine.</p>
                 </article>
-                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-mint/40">
+                <article class="group h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-neon/40">
                     <div class="flex items-center justify-between">
-                        <span class="rounded-full bg-mint/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-mint">Data</span>
+                        <span class="rounded-full bg-neon/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Data</span>
                         <span class="text-sm text-mist">Industrie</span>
                     </div>
-                    <h3 class="mt-6 text-xl font-semibold text-white">Command center data-driven</h3>
-                    <p class="mt-4 text-sm text-slate-200">Data lakehouse, dashboards temps réel et algorithmes prédictifs : économies de 1,3M€ et décisions accélérées.</p>
+                    <h3 class="mt-6 text-xl font-semibold text-white">Command center décisionnel</h3>
+                    <p class="mt-4 text-sm text-slate-200">Data lakehouse, dashboards exécutifs et IA générative : 1,3M€ d'économies, décisions raccourcies de 40%, 20h/semaines d'analyse gagnées.</p>
                 </article>
             </div>
         </section>
 
-        <section aria-label="Indicateurs" class="bg-white/5">
-            <div class="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-4 lg:px-10">
+        <section aria-label="Indicateurs" class="bg-white/5 py-20">
+            <div class="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-4 lg:px-10">
                 <div class="lg:col-span-2">
-                    <h2 class="font-display text-3xl text-white sm:text-4xl">Les résultats parlent d'eux-mêmes</h2>
-                    <p class="mt-4 text-lg text-slate-200">Nous cultivons une approche data-driven, avec des indicateurs suivis dès le cadrage pour mesurer l'impact réel de nos interventions.</p>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Les chiffres clés</h2>
+                    <p class="mt-4 text-lg text-slate-200">Nous suivons systématiquement des KPI communiqués aux sponsors et équipes : temps gagné, adoption, revenus incrémentaux.</p>
                 </div>
                 <dl class="grid gap-8 sm:grid-cols-2 lg:col-span-2">
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
-                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Time-to-market</dt>
-                        <dd class="mt-3 text-3xl font-semibold text-white">x2 plus rapide</dd>
+                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Temps gagné</dt>
+                        <dd class="mt-3 text-3xl font-semibold text-white">20h/équipe/semaine</dd>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
-                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Adoption interne</dt>
-                        <dd class="mt-3 text-3xl font-semibold text-white">93% d'équipes actives</dd>
+                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Time-to-market</dt>
+                        <dd class="mt-3 text-3xl font-semibold text-white">2x plus rapide</dd>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
-                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">ROI moyen</dt>
-                        <dd class="mt-3 text-3xl font-semibold text-white">+145% en 12 mois</dd>
+                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">ROI moyen</dt>
+                        <dd class="mt-3 text-3xl font-semibold text-white">+145% à 12 mois</dd>
                     </div>
                     <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
-                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Satisfaction</dt>
+                        <dt class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Satisfaction</dt>
                         <dd class="mt-3 text-3xl font-semibold text-white">4.9 / 5</dd>
                     </div>
                 </dl>
@@ -283,47 +390,54 @@
         <section class="mx-auto max-w-6xl px-6 lg:px-10" aria-labelledby="faq-title">
             <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                 <div class="max-w-xl space-y-4">
-                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Questions fréquentes</span>
-                    <h2 id="faq-title" class="font-display text-3xl text-white sm:text-4xl">Nous clarifions vos enjeux dès le premier atelier</h2>
-                    <p class="text-lg text-slate-200">Anticipons ensemble vos questions sur notre modèle, nos délais ou notre mode de collaboration.</p>
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">FAQ</span>
+                    <h2 id="faq-title" class="font-display text-3xl text-white sm:text-4xl">Transparence et pédagogie dès le premier échange</h2>
+                    <p class="text-lg text-slate-200">Voici les questions issues du catalogue Base44 que nous recevons le plus souvent. Nous les abordons en atelier d'immersion.</p>
                 </div>
             </div>
             <div class="space-y-6">
                 <details class="group rounded-3xl border border-white/10 bg-white/5 p-6">
                     <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-white">
-                        Comment se déroule un projet type avec Undrenalyn eLab ?
-                        <span class="ml-4 text-mint transition group-open:rotate-45">+</span>
+                        Comment s'articule une mission type ?
+                        <span class="ml-4 text-neon transition group-open:rotate-45">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-200">Nous commençons par une immersion pour comprendre vos processus, puis définissons une roadmap priorisée. Chaque sprint livre un incrément exploitable : prototypes, automatisations ou dashboards. Nous assurons formation et transfert de compétences pour ancrer la solution.</p>
+                    <p class="mt-4 text-slate-200">Un programme dure 8 à 16 semaines. Nous débutons par une immersion, sélectionnons 3 use cases prioritaires puis livrons des incréments toutes les deux semaines (automatisations, dashboards, écrans). Les sponsors disposent d'un suivi chiffré et d'un plan d'adoption.</p>
                 </details>
                 <details class="group rounded-3xl border border-white/10 bg-white/5 p-6">
                     <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-white">
-                        Travaillez-vous avec notre équipe interne ?
-                        <span class="ml-4 text-mint transition group-open:rotate-45">+</span>
+                        Comment garantissez-vous les 20h économisées ?
+                        <span class="ml-4 text-neon transition group-open:rotate-45">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-200">Oui, notre modèle privilégie les équipes mixtes. Nous mettons à disposition product designers, devs, experts data et spécialistes automation pour renforcer vos squads et transmettre nos méthodes.</p>
+                    <p class="mt-4 text-slate-200">Nous identifions les tâches manuelles les plus chronophages, automatisons avec des workflows low-code ou RPA, et pilotons les résultats via des dashboards. Les économies sont auditées et validées avec vos responsables métiers.</p>
                 </details>
                 <details class="group rounded-3xl border border-white/10 bg-white/5 p-6">
                     <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-white">
-                        Quels outils et technologies utilisez-vous ?
-                        <span class="ml-4 text-mint transition group-open:rotate-45">+</span>
+                        Travaillez-vous avec nos équipes internes ?
+                        <span class="ml-4 text-neon transition group-open:rotate-45">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-200">Nous mixons stacks low-code (Make, n8n, Airtable, Bubble...) et développement custom (React, Next.js, Python) avec une modern data stack (Fivetran, dbt, Snowflake, Metabase) et des briques IA génératives adaptées.</p>
+                    <p class="mt-4 text-slate-200">Oui, nous intervenons en squads hybrides. Vos product owners, experts métier et data engineers collaborent avec nos designers, développeurs et spécialistes automation pour accélérer la montée en compétence.</p>
+                </details>
+                <details class="group rounded-3xl border border-white/10 bg-white/5 p-6">
+                    <summary class="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-white">
+                        Quel est votre modèle d'engagement ?
+                        <span class="ml-4 text-neon transition group-open:rotate-45">+</span>
+                    </summary>
+                    <p class="mt-4 text-slate-200">Nous proposons des missions forfaitaires pour cadrer et livrer des parcours ciblés, ou des modèles en régie agile pour piloter des programmes continus. Dans les deux cas, nous fixons des KPI et une gouvernance claire.</p>
                 </details>
             </div>
         </section>
 
         <section id="contact" class="relative">
-            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-mint/20 via-night to-night"></div>
+            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-neon/15 via-night to-night"></div>
             <div class="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr,0.9fr] lg:px-10">
                 <div class="space-y-6">
-                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-mint">Contact</span>
-                    <h2 class="font-display text-3xl text-white sm:text-4xl">Parlons de vos automatisations et expériences digitales</h2>
-                    <p class="text-lg text-slate-200">Décrivez-nous vos enjeux, nous revenons vers vous sous 48h avec une proposition d'approche. Nos équipes basées en France accompagnent des structures partout en Europe.</p>
+                    <span class="text-sm font-semibold uppercase tracking-[0.3em] text-neon">Contact</span>
+                    <h2 class="font-display text-3xl text-white sm:text-4xl">Activez votre feuille de route en 48h</h2>
+                    <p class="text-lg text-slate-200">Expliquez-nous vos enjeux. Nous revenons vers vous avec un diagnostic inspiré des meilleures pratiques Base44 et une projection de gains réalistes.</p>
                     <div class="space-y-3 text-sm text-slate-200">
-                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-mint">@</span> <a class="transition hover:text-white" href="mailto:contact@undrenalyn-elab.com">contact@undrenalyn-elab.com</a></p>
-                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-mint">🕑</span> Rendez-vous disponible sous 5 jours ouvrés</p>
-                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-mint">📍</span> Paris · Lyon · Remote</p>
+                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-neon">@</span> <a class="transition hover:text-white" href="mailto:contact@undrenalyn-elab.com">contact@undrenalyn-elab.com</a></p>
+                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-neon">🕑</span> Slot stratégique disponible sous 5 jours ouvrés</p>
+                        <p class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-neon">📍</span> Paris · Lyon · Remote Europe</p>
                     </div>
                 </div>
                 <form action="https://formsubmit.co/contact@undrenalyn-elab.com" method="POST" class="rounded-3xl border border-white/10 bg-night/70 p-8 backdrop-blur">
@@ -333,37 +447,38 @@
                     <div class="grid gap-6">
                         <div class="grid gap-2">
                             <label for="name" class="text-sm font-medium text-white">Nom et prénom</label>
-                            <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-mint focus:outline-none" placeholder="Alex Martin">
+                            <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-neon focus:outline-none" placeholder="Alex Martin">
                         </div>
                         <div class="grid gap-2">
                             <label for="email" class="text-sm font-medium text-white">Email professionnel</label>
-                            <input id="email" name="email" type="email" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-mint focus:outline-none" placeholder="vous@entreprise.com">
+                            <input id="email" name="email" type="email" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-neon focus:outline-none" placeholder="vous@entreprise.com">
                         </div>
                         <div class="grid gap-2">
-                            <label for="company" class="text-sm font-medium text-white">Entreprise</label>
-                            <input id="company" name="company" type="text" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-mint focus:outline-none" placeholder="Nom de l'organisation">
+                            <label for="company" class="text-sm font-medium text-white">Organisation</label>
+                            <input id="company" name="company" type="text" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-neon focus:outline-none" placeholder="Nom de la structure">
                         </div>
                         <div class="grid gap-2">
-                            <label for="budget" class="text-sm font-medium text-white">Budget indicatif</label>
-                            <select id="budget" name="budget" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-mint focus:outline-none">
+                            <label for="team" class="text-sm font-medium text-white">Équipes à mobiliser</label>
+                            <select id="team" name="team" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-neon focus:outline-none">
                                 <option value="" class="text-night">Sélectionnez</option>
-                                <option value="moins-25">Moins de 25k€</option>
-                                <option value="25-75">25k€ - 75k€</option>
-                                <option value="75-150">75k€ - 150k€</option>
-                                <option value="plus-150">150k€ et +</option>
+                                <option value="marketing">Marketing & Growth</option>
+                                <option value="ops">Opérations & Supply</option>
+                                <option value="produit">Produit & Tech</option>
+                                <option value="finance">Finance & Direction</option>
+                                <option value="autre">Autre</option>
                             </select>
                         </div>
                         <div class="grid gap-2">
-                            <label for="message" class="text-sm font-medium text-white">Votre message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-mint focus:outline-none" placeholder="Décrivez vos enjeux, vos outils actuels, vos objectifs..."></textarea>
+                            <label for="message" class="text-sm font-medium text-white">Vos enjeux</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-neon focus:outline-none" placeholder="Décrivez vos processus actuels, vos irritants, vos objectifs..."></textarea>
                         </div>
                         <div class="grid gap-2">
                             <label class="inline-flex items-start gap-3 text-sm text-slate-300">
-                                <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 rounded border-white/10 bg-white/5 text-mint focus:ring-mint">
+                                <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 rounded border-white/10 bg-white/5 text-neon focus:ring-neon">
                                 <span>J'accepte que mes informations soient utilisées pour être recontacté au sujet de ma demande.</span>
                             </label>
                         </div>
-                        <button type="submit" class="mt-2 inline-flex items-center justify-center rounded-full bg-mint px-6 py-3 font-semibold text-night transition hover:-translate-y-0.5 hover:bg-white">Envoyer ma demande</button>
+                        <button type="submit" class="mt-2 inline-flex items-center justify-center rounded-full bg-neon px-6 py-3 font-semibold text-night transition hover:-translate-y-0.5 hover:bg-white">Envoyer ma demande</button>
                     </div>
                 </form>
             </div>
@@ -377,16 +492,35 @@
                 <p>undrenalynelab.io · contact@undrenalyn-elab.com</p>
             </div>
             <div class="flex flex-wrap items-center gap-6 text-slate-400">
+                <a class="transition hover:text-white" href="#metiers">Métiers</a>
                 <a class="transition hover:text-white" href="#expertises">Expertises</a>
-                <a class="transition hover:text-white" href="#approche">Approche</a>
-                <a class="transition hover:text-white" href="#realisations">Réalisations</a>
+                <a class="transition hover:text-white" href="#technologies">Technologies</a>
+                <a class="transition hover:text-white" href="#simulateur">Simulateur</a>
                 <a class="transition hover:text-white" href="#contact">Contact</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const year = document.getElementById('year');
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+
+        const teamSize = document.getElementById('team-size');
+        const hoursSaved = document.getElementById('hours-saved');
+        const valueCreated = document.getElementById('value-created');
+        if (teamSize && hoursSaved && valueCreated) {
+            const updateSimulator = () => {
+                const teams = parseInt(teamSize.value, 10);
+                const hours = teams * 20;
+                const value = Math.round(hours * 60 * 48 / 1000) * 1000; // arrondi au millier près
+                hoursSaved.textContent = `${hours} h`;
+                valueCreated.textContent = `${value.toLocaleString('fr-FR')} €`;
+            };
+            teamSize.addEventListener('input', updateSimulator);
+            updateSimulator();
+        }
     </script>
 </body>
 </html>

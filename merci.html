@@ -6,18 +6,20 @@
     <title>Merci pour votre message — Undrenalyn eLab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        night: '#0B1021',
-                        mint: '#38BDF8'
+                        night: '#050816',
+                        neon: '#38BDF8',
+                        mist: '#94A3B8'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'Inter', 'sans-serif']
                     }
                 }
             }
@@ -26,10 +28,10 @@
 </head>
 <body class="flex h-full items-center justify-center bg-gradient-to-br from-night via-black to-night">
     <main class="mx-6 max-w-xl rounded-3xl border border-white/10 bg-white/5 p-10 text-center backdrop-blur">
-        <span class="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-mint">Merci</span>
-        <h1 class="mt-6 text-3xl font-semibold text-white">Votre message a bien été envoyé.</h1>
-        <p class="mt-4 text-slate-200">L'équipe Undrenalyn eLab vous répondra dans un délai maximum de 48 heures ouvrées. Vous pouvez également nous écrire directement à <a href="mailto:contact@undrenalyn-elab.com" class="text-mint underline decoration-mint/50 underline-offset-4">contact@undrenalyn-elab.com</a>.</p>
-        <a href="/" class="mt-8 inline-flex items-center justify-center rounded-full bg-mint px-6 py-3 font-semibold text-night transition hover:-translate-y-0.5 hover:bg-white">Revenir à l'accueil</a>
+        <span class="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neon">Merci</span>
+        <h1 class="mt-6 font-display text-3xl text-white">Votre message est bien parti.</h1>
+        <p class="mt-4 text-mist">Nous revenons vers vous sous 48h avec un plan d'actions inspiré Base44 et adapté à vos enjeux. Pour tout complément, contactez-nous sur <a href="mailto:contact@undrenalyn-elab.com" class="text-neon underline decoration-neon/50 underline-offset-4">contact@undrenalyn-elab.com</a>.</p>
+        <a href="/" class="mt-8 inline-flex items-center justify-center rounded-full bg-neon px-6 py-3 font-semibold text-night transition hover:-translate-y-0.5 hover:bg-white">Retourner à l'accueil</a>
     </main>
 </body>
 </html>
