@@ -27,7 +27,23 @@
     'de a à z'
   ];
 
+  const terminology = [
+    { pattern: /workflow(s?)/gi, replacement: 'processus automatique$1' },
+    { pattern: /agent(s?)/gi, replacement: 'assistant virtuel$1' },
+    { pattern: /journalisation/gi, replacement: 'suivi détaillé' },
+    { pattern: /validation humaine/gi, replacement: 'vous décidez' },
+    { pattern: /webhook(s?)/gi, replacement: 'notification automatique$1' }
+  ];
+
   const normaliseBrand = (text) => text.replace(/undrenalyn\s*elab/gi, 'Undrenalyn eLab');
+
+  const applyTerminology = (text) => {
+    let updated = text;
+    terminology.forEach(({ pattern, replacement }) => {
+      updated = updated.replace(pattern, replacement);
+    });
+    return updated;
+  };
 
   const buildSelector = (element) => {
     if (!element || element === document.body) {
@@ -58,7 +74,8 @@
       const node = walker.currentNode;
       if (!node || !node.nodeValue) continue;
       const original = node.nodeValue;
-      const updated = normaliseBrand(original);
+      let updated = normaliseBrand(original);
+      updated = applyTerminology(updated);
       if (updated !== original) {
         node.nodeValue = updated;
       }
@@ -73,7 +90,8 @@
     document.querySelectorAll('*').forEach((element) => {
       for (const attr of Array.from(element.attributes || [])) {
         const value = attr.value;
-        const updated = normaliseBrand(value);
+        let updated = normaliseBrand(value);
+        updated = applyTerminology(updated);
         if (updated !== value) {
           element.setAttribute(attr.name, updated);
         }
@@ -85,74 +103,6 @@
     } else {
       console.table([]);
     }
-  };
-
-  const initTooltips = () => {
-    const dictionary = (window.ELAB_TERMS || {});
-    const terms = document.querySelectorAll('.term[data-key]');
-    let tooltipCount = 0;
-
-    terms.forEach((term) => {
-      if (term.dataset.tooltipReady === 'true') {
-        return;
-      }
-      const key = term.getAttribute('data-key');
-      const definition = dictionary[key];
-      if (!definition) return;
-
-      const tooltip = document.createElement('div');
-      tooltip.className = 'term-tooltip';
-      const tooltipId = `term-tooltip-${tooltipCount += 1}`;
-      tooltip.id = tooltipId;
-      tooltip.textContent = definition;
-      tooltip.dataset.visible = 'false';
-      document.body.appendChild(tooltip);
-
-      term.setAttribute('tabindex', '0');
-      term.setAttribute('aria-describedby', tooltipId);
-
-      const positionTooltip = () => {
-        const rect = term.getBoundingClientRect();
-        const top = rect.bottom + window.scrollY + 12;
-        const left = rect.left + window.scrollX;
-        tooltip.style.top = `${top}px`;
-        tooltip.style.left = `${left}px`;
-      };
-
-      const showTooltip = () => {
-        positionTooltip();
-        tooltip.dataset.visible = 'true';
-      };
-
-      const hideTooltip = () => {
-        tooltip.dataset.visible = 'false';
-      };
-
-      term.addEventListener('mouseenter', showTooltip);
-      term.addEventListener('mouseleave', hideTooltip);
-      term.addEventListener('focus', showTooltip);
-      term.addEventListener('blur', hideTooltip);
-      term.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          hideTooltip();
-          term.blur();
-        }
-      });
-
-      window.addEventListener('scroll', () => {
-        if (tooltip.dataset.visible === 'true') {
-          positionTooltip();
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        if (tooltip.dataset.visible === 'true') {
-          positionTooltip();
-        }
-      });
-
-      term.dataset.tooltipReady = 'true';
-    });
   };
 
   const initSimulator = () => {
@@ -192,30 +142,30 @@
     const knowledgeBase = [
       {
         keywords: ['prix', 'tarif', 'budget', 'coût'],
-        response: "Nos missions démarrent à partir de 4 500 € pour un prototype complet (48 h) incluant tests et transfert." 
+        response: 'Nos missions démarrent à 4 500 € pour un prototype complet incluant tests, formation et transfert.'
       },
       {
-        keywords: ['agent builder', 'builder', 'openai', 'agent'],
-        response: "Nous préparons la structure Agent Builder: définition du rôle, droits d’accès, jeux de test et calendrier de déclenchement."
+        keywords: ['assistant', 'assistant virtuel', 'openai'],
+        response: 'Nous configurons l’assistant virtuel: rôle, accès sécurisés, scénarios tests et suivi détaillé.'
       },
       {
         keywords: ['crm', 'salesforce', 'hubspot'],
-        response: "Nous synchronisons votre CRM avec le <span class=\"term\" data-key=\"workflow\">workflow</span>: création de fiches, champs obligatoires, notifications ciblées."
+        response: 'Nous synchronisons votre CRM avec le processus automatique: fiches créées, champs vérifiés, notification automatique envoyée.'
       },
       {
         keywords: ['erp', 'stock', 'logistique', 'supply'],
-        response: "Nous orchestrons la mise à jour ERP, les contrôles de stock et les alertes transport avec <span class=\"term\" data-key=\"journalisation\">journalisation</span> détaillée."
+        response: 'Nous orchestrons la mise à jour ERP, les contrôles de stock et les alertes transport avec suivi détaillé.'
       },
       {
         keywords: ['support', 'service client', 'sav'],
-        response: "Nous automatisons la qualification SAV, la création de tickets et l’escalade avec validations humaines à chaque étape clé."
+        response: 'Nous automatisons la qualification SAV, la création de tickets et l’escalade. Vous décidez des validations clés.'
       }
     ];
 
     const defaultResponses = [
-      "Merci. Nous préparons une fiche processus et un prototype test sous 48 h.",
-      "Compris. Je vous envoie notre gabarit de diagnostic pour préciser inputs/outputs.",
-      "Je vous propose un créneau de 45 min pour cadrer les données et la validation humaine."
+      'Merci. Nous préparons une fiche processus et un prototype test sous 48 h.',
+      'Compris. Je vous envoie notre gabarit de diagnostic pour préciser inputs/outputs.',
+      'Je vous propose un créneau de 45 min pour cadrer les données et confirmer que vous décidez des derniers contrôles.'
     ];
 
     const findResponse = (message) => {
@@ -259,10 +209,105 @@
       appendMessage(message, 'user');
       chatInput.value = '';
       setTimeout(() => {
-        appendMessage(findResponse(message), 'assistant');
-        initTooltips();
+        appendMessage(applyTerminology(findResponse(message)), 'assistant');
       }, 500);
     });
+  };
+
+  const initRevealAnimations = () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    if (!revealElements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach((el) => observer.observe(el));
+  };
+
+  const animateValue = (element, target, { duration = 1400, suffix = '', decimals = 0 } = {}) => {
+    const start = 0;
+    const startTime = performance.now();
+
+    const step = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = progress < 0.5
+        ? 2 * progress * progress
+        : -1 + (4 - 2 * progress) * progress;
+      const value = start + (target - start) * eased;
+      element.textContent = value.toFixed(decimals) + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const initCounters = () => {
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!counters.length) return;
+
+    const revealCounter = (element) => {
+      const target = Number(element.dataset.counter || '0');
+      const suffix = element.dataset.suffix || '';
+      const decimals = Number(element.dataset.decimals || '0');
+      const duration = Number(element.dataset.duration || '1400');
+      animateValue(element, target, { duration, suffix, decimals });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(revealCounter);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          revealCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    counters.forEach((counter) => observer.observe(counter));
+  };
+
+  const initGauges = () => {
+    const fills = document.querySelectorAll('[data-gauge]');
+    if (!fills.length) return;
+
+    const setGauge = (element) => {
+      const value = Math.min(100, Math.max(0, Number(element.dataset.gauge || '0')));
+      element.style.width = `${value}%`;
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      fills.forEach(setGauge);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setGauge(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    fills.forEach((fill) => observer.observe(fill));
   };
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -272,8 +317,10 @@
     }
 
     auditCopy();
-    initTooltips();
     initSimulator();
     initChat();
+    initRevealAnimations();
+    initCounters();
+    initGauges();
   });
 })();
